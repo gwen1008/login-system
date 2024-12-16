@@ -1,0 +1,94 @@
+/* 整體容器 */
+.schedule-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .schedule-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .schedule-info {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* 表格容器 */
+  .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  .schedule-table {
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 1fr);
+    gap: 2px; /* 表格單元格之間的間隙 */
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* 表格頭部 */
+  .table-header {
+    display: contents;
+  }
+  
+  .header-cell {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    background-color: #2980b9;
+    color: #fff;
+    border: 2px solid #2980b9;
+  }
+  
+  /* 表格行 */
+  .table-row {
+    display: contents;
+  }
+  
+  .table-cell {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .period-cell {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .cell-content-bold {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .cell-content {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .empty-cell {
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic;
+  }
+  

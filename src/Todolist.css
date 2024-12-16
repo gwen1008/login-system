@@ -1,0 +1,212 @@
+/* 整體布局 */
+
+/* 設定畫面主體容器 */
+.todolist-app {
+    display: flex; /* 使用 Flexbox 進行布局 */
+    margin-left: 50px;
+    height: 100vh; /* 畫面全高 */
+    background-color: #f9f9f9; /* 主畫面底色 */
+    overflow: hidden; /* 防止溢出 */
+    width: 100%;
+  }
+  
+  /* 左側功能列表 */
+  .sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 50px; /* 預設收合狀態寬度 */
+    transition: width 0.3s ease; /* 展開與收合動畫 */
+    overflow: hidden; /* 隱藏多餘內容 */
+  }
+    
+  .sidebar.open {
+    width: 200px; /* 展開時寬度 */
+  }
+    
+  /* 左側收合按鈕 */
+  .toggle-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+  }
+    
+  /* 左側功能清單 */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }  
+  .menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    justify-content: flex-end;
+  } 
+  .menu-item.active {
+    margin-top: 0px;
+    background-color: #34495e;
+  } 
+  
+  /* 中間主區域 */
+  .calendar-container {
+    flex-grow: 1; /* 讓中間日記區填充剩餘空間 */
+    padding: 20px; /* 內距設定 */
+    transition: margin-left 0.3s ease; /* 左側欄位開闔動畫 */
+    overflow-y: auto; /* 支援滾動 */
+  }
+
+  .main-content h1 {
+    font-size: 24px;
+    color: #2c3e50; /* 深藍色標題 */
+    margin-bottom: 20px;
+  }
+  
+  .fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .fc-toolbar-title :hover{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #ecf0f1;
+  }
+  
+  .fc-day-today {
+    margin-right: 0px;
+    background-color: #f1c40f !important; /* 今日高亮背景 */
+  }
+  
+  .fc-day:hover {
+    margin-right: 0px;
+    background-color: #ecf0f1; /* 日期 hover 效果 */
+  }
+
+  /* 右側新增日記欄位 */
+  .add-task-container {
+    background-color: #ecf0f1;
+    width: 40px; /* 預設收合狀態寬度 */
+    transition: width 0.3s ease; /* 展開與收合動畫 */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+    
+  .add-task-container.open {
+    align-items: center;
+    width: 280px; /* 展開時寬度 */
+    padding: 0px; /* 展開時內距 */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .add-task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* 右側欄位收合按鈕 */  
+  .toggle-add-task {
+    margin-top: 0px;
+    background: none; /* 無背景色 */
+    border: none; /* 無邊框 */
+    cursor: pointer; /* 顯示為可點擊狀態 */
+    font-size: 16px; /* 文字大小 */
+    padding: 10px; /* 內邊距 */
+    display: block;
+    text-align: left; /* 文字置中 */
+    color: #3498db; /* 文字顏色設定為白色 */
+  } 
+  .toggle-add-task:hover {
+    margin-top: 0px;
+    background-color: #3498db; /* 滑鼠懸停時背景色改為藍色 */
+    border-radius: 0px; /* 邊角圓角化 */
+    color: white; /* 滑鼠懸停時文字保持白色 */
+  }
+
+  .task-textarea {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10wpx;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+
+  .add-task-button {
+    border: none;
+    width: 25%;
+    color: white;
+    background-color: #3498db;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+    
+  .add-task-button:hover {
+    background-color: #2980b9;
+    
+  }
+
+  /* 中間日記檢視區 */
+.todolist-container {
+  flex-grow: 1; /* 讓中間日記區填充剩餘空間 */
+  padding: 20px; /* 內距設定 */
+  transition: margin-left 0.3s ease, margin-right 0.3s ease; /* 動態過渡動畫 */
+  /* background-color: #ffffff; 背景顏色 */
+  overflow-y: auto; /* 垂直滾動 */
+}
+  
+  /* 單一任務樣式 */
+  .todolist-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .todolist-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* 任務內容 */
+  .todolist-item-content {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* 完成狀態的標記 */
+  .todolist-item-completed {
+    text-decoration: line-through;
+    color: #7f8c8d;
+  }
+  
+  /* 任務操作按鈕 */
+  .todolist-item-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .todolist-item-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .todolist-item-button:hover {
+    background-color: #ecf0f1;
+  }
+  
+  .todolist-item-edit-button {
+    color: #3498db;
+  }
+  
+  .todolist-item-delete-button {
+    color: #e74c3c;
+  }
+  

@@ -1,0 +1,193 @@
+/* 主畫面 */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 頁面頂部圖片與網站名稱 */
+.header {
+  position: relative;
+  width: 100%;
+  height: 40vh; /* 高度設置為視窗高度的一半 */
+  overflow: hidden;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.header-title {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.header-slogan {
+  font-size: 1.5em;
+  margin-top: 1px;
+}
+
+/* 功能長條 */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* 保证logo和右侧的个人资料区分开 */
+  align-items: center;
+  background-color: #34495e;
+  width: 100%;
+  height: 60px; /* 与logo高度一致 */
+  padding: 0 20px; /* 移除上下padding，左右给一些内边距 */
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo-image {
+  height: 100%;
+  width: auto;
+  max-height: 40px; /* 控制logo大小 */
+}
+
+.navbar .navbar-content {
+  display: flex;
+  justify-content: center; /* 中间对齐 */
+  align-items: center;
+  flex-grow: 1; /* 让内容区域填满剩余空间 */
+}
+
+.navbar .nav-item {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px; /* 只保留左右padding */
+  font-size: 1.2em;
+  height: 100%; /* 确保nav-item与导航栏同高 */
+  display: flex; /* 使用flex布局 */
+  align-items: center; /* 垂直居中 */
+  transition: background-color 0.3s; /* 添加平滑过渡效果 */
+}
+
+.navbar .nav-item:hover {
+  background-color: #2c3e50;
+}
+
+.navbar .dropdown {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  position: relative; /* 设置相对定位，确保下拉菜单相对于该区域定位 */
+  margin-left: auto; /* 确保下拉菜单靠右 */
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%; /* 确保下拉菜单在个人资料区域下方显示 */
+  right: 0; /* 确保下拉菜单对齐到右侧 */
+  width: max-content; /* 让下拉菜单根据内容宽度自动调整 */
+}
+
+
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .dropdown:hover .nav-item {
+  background-color: #2c3e50;
+}
+
+
+
+/* 中央主畫面 */
+.main-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.function-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 200px; /* 固定宽度 */
+  height: 200px; /* 固定高度，确保正方形 */
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-back-text {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+}

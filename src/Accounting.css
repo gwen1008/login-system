@@ -1,0 +1,129 @@
+.accounting-app {
+    display: flex;
+    margin-left: 50px;
+    height: 100vh;
+    background-color: #f5f8fa;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* 左側選單樣式 */
+  .sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+  .sidebar.open {
+    width: 200px;
+  }
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-item.active {
+    margin-top: 0px;
+    background-color: #34495e;
+  } 
+
+  
+  /* 中間區域 */
+  .accounting-view {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease, margin-right 0.3s ease; /* 動態過渡動畫 */
+    overflow-y: auto;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  .table th {
+    background-color: #2980b9;
+    color: white;
+  }
+  
+  /* 右側新增項目區 */
+  .add-entry {
+    width: 40px;
+    transition: width 0.3s ease;
+    background-color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 使內容水平置中 */
+  }
+  .add-entry.open {
+    width: 300px;
+    padding: 0px; /* 展開時內距 */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+    /* 新增日記按鈕樣式 */
+    /* 新增項目按鈕樣式 */
+
+  /* 新增日記按鈕樣式 */
+  .add-entry-button {
+    margin-top: 0px;
+    background: none; /* 無背景色 */
+    border: none; /* 無邊框 */
+    cursor: pointer; /* 顯示為可點擊狀態 */
+    font-size: 16px; /* 文字大小 */
+    padding: 10px; /* 內邊距 */
+    display: block;
+    text-align: left; /* 文字置中 */
+    color: #3498db; /* 文字顏色設定為白色 */
+  } 
+  .add-entry-button:hover {
+    margin-top: 0px;
+    background-color: #3498db; /* 滑鼠懸停時背景色改為藍色 */
+    border-radius: 0px; /* 邊角圓角化 */
+    color: white; /* 滑鼠懸停時文字保持白色 */
+  }
+    
+  .entry-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 調整按鈕樣式 */
+  .save-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px; /* 調整按鈕內部填充 */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px; /* 確保字體大小一致 */
+    text-align: center; /* 按鈕文字置中 */
+    cursor: pointer;
+  }
+  
+  /* 滑鼠懸停時按鈕樣式 */
+  .save-button:hover {
+    background-color: #2980b9;
+  }
+  

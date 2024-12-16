@@ -1,0 +1,216 @@
+/* 主容器 */
+.schedule-app {
+    display: flex;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* 左側功能列表 */
+.sidebar {
+    width: 200px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    background-color: #34495e;
+}
+
+.menu-item:hover {
+    background-color: #34495e;
+}
+
+/* 中間課程表 */
+.schedule-view {
+    flex: 1;
+    padding: 20px;
+    
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.schedule-table td.selected {
+    background-color: #ffeaa7;
+}
+
+/* 右側編輯區 */
+
+    /* 新增日記按鈕樣式 */
+  .toggle-format-editor {
+    margin-top: 0px;
+    background: none; /* 無背景色 */
+    border: none; /* 無邊框 */
+    cursor: pointer; /* 顯示為可點擊狀態 */
+    font-size: 16px; /* 文字大小 */
+    padding: 10px; /* 內邊距 */
+    display: block;
+    text-align: left; /* 文字置中 */
+    color: #3498db; /* 文字顏色設定為白色 */
+  } 
+  .toggle-format-editor:hover {
+    margin-top: 0px;
+    background-color: #3498db; /* 滑鼠懸停時背景色改為藍色 *
+    border-radius: 0px; /* 邊角圓角化 */
+    color: white; /* 滑鼠懸停時文字保持白色 */
+  }
+
+.editor {
+    width: 40px;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #ecf0f1;
+    transition: width 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.editor.open {
+    width: 300px;
+    padding: 20px;
+}
+
+.editor-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-content input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.editor-content button {
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editor-content button:first-of-type {
+    background-color: #3498db;
+}
+
+.editor-content button:first-of-type:hover {
+    background-color: #2980b9;
+}
+
+/* 調整課程輸入框和刪除按鈕的容器 */
+.editor-content div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 讓按鈕靠右 */
+    margin-bottom: 5px; /* 縮小每行的間距 */
+}
+
+/* 輸入框樣式 */
+.editor-content div input {
+    width: 180px;
+    padding: 8px;
+    margin-right: 5px; /* 與按鈕保持間距 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 刪除按鈕樣式 */
+.editor-content button:last-of-type {
+    background-color: #bdc3c7; /* 低調灰色 */
+    color: #2c3e50;
+    padding: 5px 15px; /* 緊湊的尺寸 */
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    margin: 0; /* 無多餘空間 */
+    cursor: pointer;
+}
+
+.editor-content button:last-of-type:hover {
+    background-color: #95a5a6; /* 滑過時稍微變深 */
+    color: white;
+}
+
+
+.export-button {
+    margin-top: 20px;
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.export-button:hover {
+    background-color: #219150;
+}
+
+  /* 左側功能列表 */
+  .sidebar {
+    width: 200px;
+    background-color: #2c3e50;
+    transition: width 0.3s;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar.closed {
+    width: 50px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .menu-item.active {
+    padding: 15px;
+    background-color: #2c3e50;
+  }
+  
+  .menu-item a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px;
+  }
+  
+  .menu-item:hover {
+    background-color: #34495e;
+  }
+  

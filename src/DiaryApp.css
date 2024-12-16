@@ -1,0 +1,255 @@
+/* DiaryApp.css */
+/* 設定畫面主體容器 */
+.diary-app {
+    display: flex; /* 使用 Flexbox 進行布局 */
+    margin-left: 50px;
+    height: 100vh; /* 畫面全高 */
+    background-color: #f9f9f9; /* 主畫面底色 */
+    overflow: hidden; /* 防止溢出 */
+    width: 100%;
+  }
+  /* 左側功能列表 */
+  .sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 50px; /* 預設收合狀態寬度 */
+    transition: width 0.3s ease; /* 展開與收合動畫 */
+    overflow: hidden; /* 隱藏多餘內容 */
+  }
+  
+  .sidebar.open {
+    width: 200px; /* 展開時寬度 */
+  }
+  
+  /* 左側收合按鈕 */
+  .toggle-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  /* 左側功能清單 */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }  
+  .menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    justify-content: flex-end;
+  } 
+  .menu-item.active {
+    margin-top: 0px;
+    background-color: #34495e;
+  } 
+
+  /* 中間日記檢視區 */
+  .header {
+    position: relative;
+    width: 100%;
+    height: 10vh; /* 高度設置為視窗高度的一半 */
+    overflow: hidden;
+  }
+  .diary-view {
+    flex-grow: 1; /* 讓中間日記區填充剩餘空間 */
+    padding: 20px; /* 內距設定 */
+    transition: margin-left 0.3s ease, margin-right 0.3s ease; /* 動態過渡動畫 */
+    overflow-y: auto; /* 垂直滾動 */
+  }
+
+  /* 選單區域的容器 */
+  .filter-section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end; /* 將內容靠右對齊 */
+    align-items: center;
+    margin-right: 0px; /* 與右側邊距 */
+    gap: 10px; /* 控制選單間距 */
+  } 
+
+  /* 年份篩選選單 */
+  .filter-year,
+  .filter-month {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    text-align: center; /* 文字置中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px; /* 根據需要調整寬度 */
+  } 
+
+  /* 當滑鼠懸停時，選單邊框顏色變化 */
+  .filter-year:hover,
+  .filter-month:hover {
+    border-color: #3498db;
+  }
+
+  
+  /* 右側新增日記欄位 */
+  .add-diary {
+    background-color: #ecf0f1;
+    width: 40px; /* 預設收合狀態寬度 */
+    transition: width 0.3s ease; /* 展開與收合動畫 */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-diary.open {
+    width: 280px; /* 展開時寬度 */
+    padding: 0px; /* 展開時內距 */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+    /* 新增日記按鈕樣式 */
+  .add-diary-button {
+    margin-top: 0px;
+    background: none; /* 無背景色 */
+    border: none; /* 無邊框 */
+    cursor: pointer; /* 顯示為可點擊狀態 */
+    font-size: 16px; /* 文字大小 */
+    padding: 10px; /* 內邊距 */
+    display: block;
+    text-align: left; /* 文字置中 */
+    color: #3498db; /* 文字顏色設定為白色 */
+  } 
+  .add-diary-button:hover {
+    margin-top: 0px;
+    background-color: #3498db; /* 滑鼠懸停時背景色改為藍色 */
+    border-radius: 0px; /* 邊角圓角化 */
+    color: white; /* 滑鼠懸停時文字保持白色 */
+  }
+  
+  .diary-add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-date {
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-content {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .save-button {
+    border: none;
+    width: 25%;
+    color: white;
+    background-color: #3498db;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  
+  .save-button:hover {
+    background-color: #2980b9;
+    
+  }
+  
+  /* 日記條目容器樣式 */
+  .diary-entry {
+    border-bottom: 1px solid #ddd;
+    padding: 20px; /* 加大間距 */
+    margin-bottom: 10px;
+    position: relative; /* 讓按鈕定位於右下角 */
+    background-color: #fff; /* 增加背景色，方便區分 */
+    border-radius: 8px; /* 讓外框有圓角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 增加陰影效果 */
+  } 
+
+  /* 按鈕容器 */
+  .entry-actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* 定位到右下角 */
+    display: flex;
+    gap: 1px; /* 按鈕之間間距 */
+  } 
+
+  /* 按鈕樣式 */
+  .entry-actions button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } 
+
+  /* 日記條目容器樣式 */
+  .diary-entry {
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  } 
+
+  /* 按鈕容器 */
+  .entry-actions {
+    width: 10%; /* 縮小整體容器的寬度 */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 1px; /* 縮小按鈕之間的間距 */
+  } 
+
+  /* 按鈕文字樣式 */
+  .entry-actions .delete-button {
+    background-color: transparent;
+    color: #e74c3c;
+    border: none;
+    padding: 5px 5px; /* 縮小按鈕的內距 */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* 縮小文字大小 */
+  } 
+
+  /* 當滑鼠懸停時顯示完整按鈕樣式 */
+  .entry-actions .delete-button:hover {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+  } 
+
+  /* 修改按鈕的樣式（常駐顯示完整按鈕） */
+  .entry-actions .edit-button {
+    background-color: transparent;
+    color: #3498db;
+    border: none;
+    padding: 5px 5px; /* 縮小按鈕的內距 */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* 縮小文字大小 */
+  } 
+
+  .entry-actions .edit-button:hover {
+    background-color: #2980b9;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+  } 
+
